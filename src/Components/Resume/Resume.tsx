@@ -8,6 +8,7 @@ function Resume() {
       <p>Ali Abid</p>
             <p>Ali Abid</p>
               <p>Ali Abid</p>
+              <h2>hghgvhgnc</h2>
 
     </div>
   )
