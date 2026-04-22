@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import './Navbar.css'
+import { FiAlignCenter } from "react-icons/fi";
+
 
 function Navbar() {
   const location = useLocation()
@@ -11,7 +13,7 @@ function Navbar() {
         
         {/* Logo */}
         <Link className="navbar-brand" to="/">
-          <span className="logo-text">SELFOWN</span>
+          <span className="logo-text"><FiAlignCenter /> SELFOWN</span>
           <a href="logo-dark.svg" ></a>
         </Link>
 
