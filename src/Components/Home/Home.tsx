@@ -3,7 +3,6 @@ import "./Home.css";
 import { FaGithub, FaTwitter, FaGoogle, FaLinkedin, FaAndroid } from "react-icons/fa";
 import { FaAngular, FaBootstrap, FaLaravel, FaNode, FaReact, FaVuejs } from "react-icons/fa6";
 
-import Android from "../../src/assets/Android.jpg";
 
 
 const Home: React.FC = () => {
@@ -16,7 +15,6 @@ const Home: React.FC = () => {
 
             {/* LEFT IMAGE */}
             <div className="hero-image">
-              <img src ={Android}/>
               <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="David Williamson" />
             </div>
 
