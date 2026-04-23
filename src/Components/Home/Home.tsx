@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Home.css";
 import { FaGithub, FaTwitter, FaGoogle, FaLinkedin, FaAndroid } from "react-icons/fa";
-import { FaAngular, FaBootstrap, FaLaravel, FaNode, FaReact, FaVuejs } from "react-icons/fa6";
-
-
 
 const Home: React.FC = () => {
+  const professions = ["Flutter", "React", "Python"];
+  const [currentProfession, setCurrentProfession] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentProfession((prev) => (prev + 1) % professions.length);
+    }, 3000); // Change every 3 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       {/* HERO SECTION */}
@@ -15,7 +22,7 @@ const Home: React.FC = () => {
 
             {/* LEFT IMAGE */}
             <div className="hero-image">
-              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="David Williamson" />
+              <img src="https://mannatthemes.com/selfown/default/images/personal/1.png" className="img-fluid ml-lg-5" alt="David Williamson" />
             </div>
 
             {/* RIGHT CONTENT */}
@@ -23,17 +30,17 @@ const Home: React.FC = () => {
               <p className="hero-subtitle">Hi, I'm David Williamson</p>
 
               <h1 className="hero-title">
-                I'm a freelance <span className="highlight">Python</span> Developer
+                I'm a freelance <span className="highlight animate-profession">{professions[currentProfession]}</span> Developer
               </h1>
 
-              <p className="hero-description">
+              {/* <p className="hero-description">
                 I design and develop modern web & mobile applications with clean UI and powerful backend systems.
-              </p>
+              </p> */}
 
               <div className="hero-buttons">
-                <a  className="btn btn-outline">Download CV</a>
+                <a  className="btn btn-primary">Download CV</a>
 
-                <button className="btn btn-primary"></button>
+                
               </div>
             </div>
 
@@ -92,122 +99,41 @@ const Home: React.FC = () => {
       </div>
 
     </div>
-
-    {/* SKILLS CARDS */}
-    <div className="skills-grid mt-5">
-      <div className="skill-card">
-        <div className="skill-icon">
-          <i className="fab fa-android"><FaAndroid/></i>
-        </div>
-        <h5>Android</h5>
-        <p>2 Year Experience</p>
-      </div>
-
-      <div className="skill-card">
-        <div className="skill-icon">
-          <i className="fab fa-angular"><FaAngular/></i>
-        </div>
-        <h5>Angular</h5>
-        <p>1 Year Experience</p>
-      </div>
-
-      <div className="skill-card">
-        <div className="skill-icon">
-          <i className="fab fa-bootstrap"><FaBootstrap/></i>
-        </div>
-        <h5>Bootstrap</h5>
-        <p>3 Year Experience</p>
-      </div>
-
-      <div className="skill-card">
-        <div className="skill-icon">
-          <i className="fab fa-vuejs"><FaVuejs/></i>
-        </div>
-        <h5>Vue</h5>
-        <p>2 Year Experience</p>
-      </div>
-
-      <div className="skill-card">
-        <div className="skill-icon">
-          <i className="fab fa-react"><FaReact/></i>
-        </div>
-        <h5>React</h5>
-        <p>8 Months Experience</p>
-      </div>
-
-      
-
-      <div className="skill-card">
-        <div className="skill-icon">
-          <i className="fab fa-laravel"><FaLaravel/></i>
-        </div>
-        <h5>Laravel</h5>
-        <p>1 Year Experience</p>
-      </div>
-
-      <div className="skill-card">
-        <div className="skill-icon">
-          <i className="fab fa-node-js"><FaNode/></i>
-        </div>
-        <h5>Node.js</h5>
-        <p>10 Months Experience</p>
-      </div>
-
-    </div>
-
   </div>
 </section>
+
+{/* SKILLS CARDS */}
+<div className="skills-grid mt-5">
+
+  {[
+    { name: "Android", exp: "2 Year Experience", img: "android.svg" },
+    { name: "Angular", exp: "1 Year Experience", img: "Angular.svg" },
+    { name: "Bootstrap", exp: "3 Year Experience", img: "bootstrap.svg" },
+    { name: "Vue", exp: "2 Year Experience", img: "vue.svg" },
+    { name: "React", exp: "8 Months Experience", img: "react.svg" },
+    { name: "MongoDB", exp: "3 Months Experience", img: "mongodb.svg" },
+    { name: "Laravel", exp: "1 Year Experience", img: "laravel.svg" },
+    { name: "Node.js", exp: "10 Months Experience", img: "nodejs-icon.svg" },
+  ].map((skill, index) => (
+    <div className="skill-card" key={index}>
+      <div className="skill-left">
+        <img
+          src={`https://mannatthemes.com/selfown/default/images/logos/${skill.img}`}
+          alt={skill.name}
+        />
+      </div>
+
+      <div className="skill-right">
+        <h5>{skill.name}</h5>
+        <p>{skill.exp}</p>
+      </div>
+    </div>
+  ))}
+
+</div>
+
       {/* ========== SKILLS SECTION ========== */}
-      <section className="skills py-5 bg-light">
-        <div className="container">
-          <div className="skills-grid">
-            {/* Android Skill */}
-            <div className="skill-card">
-              <div className="skill-icon android">
-                <i className="fab fa-android"></i>
-              </div>
-              <h5>Android</h5>
-              <p className="skill-duration">2 Year Experience</p>
-            </div>
-
-            {/* Angular Skill */}
-            <div className="skill-card">
-              <div className="skill-icon angular">
-                <i className="fab fa-angular"></i>
-              </div>
-              <h5>Angular</h5>
-              <p className="skill-duration">1 Year Experience</p>
-            </div>
-
-            {/* Bootstrap Skill */}
-            <div className="skill-card">
-              <div className="skill-icon bootstrap">
-                <i className="fab fa-bootstrap"></i>
-              </div>
-              <h5>Bootstrap</h5>
-              <p className="skill-duration">3 Year Experience</p>
-            </div>
-
-            {/* Vue Skill */}
-            <div className="skill-card">
-              <div className="skill-icon vue">
-                <i className="fab fa-vuejs"></i>
-              </div>
-              <h5>Vue</h5>
-              <p className="skill-duration">2 Year Experience</p>
-            </div>
-
-            {/* React Skill */}
-            <div className="skill-card">
-              <div className="skill-icon react">
-                <i className="fab fa-react"></i>
-              </div>
-              <h5>React</h5>
-              <p className="skill-duration">8 Months Experience</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* ========== SERVICES SECTION ========== */}
       <section className="services py-5">
@@ -225,10 +151,8 @@ const Home: React.FC = () => {
             {/* Service 1 */}
             <div className="col-md-4">
               <div className="service-card">
-                <div className="service-icon">
-                  <i className="fas fa-layer-group"></i>
-                </div>
-                <h5>Awesome Support</h5>
+                
+                <h6>Awesome Support</h6>
                 <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               </div>
             </div>
@@ -239,7 +163,7 @@ const Home: React.FC = () => {
                 <div className="service-icon">
                   <i className="fas fa-dollar-sign"></i>
                 </div>
-                <h5>Dynamic Growth</h5>
+                <h6>Dynamic Growth</h6>
                 <p>Credibly brand standards compliant growth strategies that provide value to your business.</p>
               </div>
             </div>
@@ -250,7 +174,7 @@ const Home: React.FC = () => {
                 <div className="service-icon">
                   <i className="fas fa-check-circle"></i>
                 </div>
-                <h5>Branding Identity</h5>
+                <h6>Branding Identity</h6>
                 <p>Separated they live in a fictitious island that live in a fictitious island.</p>
               </div>
             </div>
@@ -364,7 +288,7 @@ const Home: React.FC = () => {
             <div className="col-md-6 col-lg-4">
               <div className="project-card">
                 <div className="project-icon angular">
-                  <i className="fab fa-angular"></i>
+                  <img src="https://mannatthemes.com/selfown/default/images/logos/Angular.svg" alt="React" className="project-icon" />
                 </div>
                 <h5>Auto Drive Project</h5>
                 <p className="project-source">Mannat-Themes <i className="fas fa-external-link-alt"></i></p>
@@ -380,7 +304,7 @@ const Home: React.FC = () => {
             <div className="col-md-6 col-lg-4">
               <div className="project-card">
                 <div className="project-icon bootstrap">
-                  <i className="fab fa-bootstrap"></i>
+                  <img src="https://mannatthemes.com/selfown/default/images/logos/bootstrap.svg" alt="Vue.js" className="project-icon" />
                 </div>
                 <h5>Auto Drive Project</h5>
                 <p className="project-source">Mannat-Themes <i className="fas fa-external-link-alt"></i></p>
@@ -396,7 +320,7 @@ const Home: React.FC = () => {
             <div className="col-md-6 col-lg-4">
               <div className="project-card">
                 <div className="project-icon mongodb">
-                  <i className="fas fa-leaf"></i>
+                  <img src="https://mannatthemes.com/selfown/default/images/logos/mongodb.svg" alt="MongoDB" className="project-icon" />
                 </div>
                 <h5>Auto Drive Project</h5>
                 <p className="project-source">Mannat-Themes <i className="fas fa-external-link-alt"></i></p>
@@ -411,7 +335,7 @@ const Home: React.FC = () => {
             <div className="col-md-6 col-lg-4">
               <div className="project-card">
                 <div className="project-icon vue">
-                  <i className="fab fa-vuejs"></i>
+                  <img src="https://mannatthemes.com/selfown/default/images/logos/vue.svg" alt="Vue.js" className="project-icon" />
                 </div>
                 <h5>Auto Drive Project</h5>
                 <p className="project-source">Mannat-Themes <i className="fas fa-external-link-alt"></i></p>
@@ -426,7 +350,7 @@ const Home: React.FC = () => {
             <div className="col-md-6 col-lg-4">
               <div className="project-card">
                 <div className="project-icon react">
-                  <i className="fab fa-react"></i>
+                  <img src="https://mannatthemes.com/selfown/default/images/logos/react.svg" alt="React" className="project-icon" />
                 </div>
                 <h5>Auto Drive Project</h5>
                 <p className="project-source">Mannat-Themes <i className="fas fa-external-link-alt"></i></p>
@@ -448,7 +372,7 @@ const Home: React.FC = () => {
             <h2 className="section-title">Latest news & insights</h2>
             <p className="section-subtitle">
               We craft digital, graphic and dimensional thinking, to create category<br/>
-              leading brand experiences that have meaning .
+              leading brand experiences that have meaning.
             </p>
           </div>
 
@@ -457,11 +381,15 @@ const Home: React.FC = () => {
             <div className="col-md-6 col-lg-4">
               <div className="blog-card">
                 <div className="blog-image">
-                  <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Blog Post" className="img-fluid" />
+                  <img src="https://mannatthemes.com/selfown/default/images/personal/1.jpg" alt="Blog Post" className="img-fluid" />
                 </div>
                 <h5 className="blog-title">How to design engaging social media content</h5>
               </div>
             </div>
+
+
+
+
 
             {/* Blog 2 */}
             <div className="col-md-6 col-lg-4">
@@ -477,7 +405,7 @@ const Home: React.FC = () => {
             <div className="col-md-6 col-lg-4">
               <div className="blog-card">
                 <div className="blog-image">
-                  <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Blog Post" className="img-fluid" />
+                  <img src="https://mannatthemes.com/selfown/default/images/personal/2.jpg" alt="Blog Post" className="img-fluid" />
                 </div>
                 <h5 className="blog-title">Best practices for modern web applications</h5>
               </div>

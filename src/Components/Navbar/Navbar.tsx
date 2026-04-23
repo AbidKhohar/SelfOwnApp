@@ -13,7 +13,9 @@ function Navbar() {
         
         {/* Logo */}
         <Link className="navbar-brand" to="/">
-          <span className="logo-text"><FiAlignCenter /> SELFOWN</span>
+                      <img className='text'  src="https://mannatthemes.com/selfown/default/images/logo-sm.png" alt="David Williamson" />
+
+          <span className="logo-text"> SELFOWN</span>
           <a href="logo-dark.svg" ></a>
         </Link>
 
