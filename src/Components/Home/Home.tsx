@@ -5,6 +5,90 @@ import { FaGithub, FaTwitter, FaGoogle, FaLinkedin, FaAndroid } from "react-icon
 const Home: React.FC = () => {
   const professions = ["Flutter", "React", "Python"];
   const [currentProfession, setCurrentProfession] = useState(0);
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [selectedFilter, setSelectedFilter] = useState("All");
+
+  // Projects Data
+  const projects = [
+    {
+      id: 1,
+      name: "Auto Drive Project",
+      source: "Mannat-Themes",
+      icon: "https://mannatthemes.com/selfown/default/images/logos/Angular.svg",
+      tags: ["ANGULAR", "REACT", "JQUERY"],
+      category: "Angular",
+      bgColor: "#ffebee"
+    },
+    {
+      id: 2,
+      name: "Auto Drive Project",
+      source: "Mannat-Themes",
+      icon: "https://mannatthemes.com/selfown/default/images/logos/bootstrap.svg",
+      tags: ["BOOTSTRAP", "CSS", "JAVASCRIPT"],
+      category: "Bootstrap",
+      bgColor: "#ede7f6"
+    },
+    {
+      id: 3,
+      name: "Auto Drive Project",
+      source: "Mannat-Themes",
+      icon: "https://mannatthemes.com/selfown/default/images/logos/mongodb.svg",
+      tags: ["MONGODB", "JAVASCRIPT"],
+      category: "MongoDB",
+      bgColor: "#e8f5e9"
+    },
+    {
+      id: 4,
+      name: "Auto Drive Project",
+      source: "Mannat-Themes",
+      icon: "https://mannatthemes.com/selfown/default/images/logos/vue.svg",
+      tags: ["VUE", "JAVASCRIPT"],
+      category: "Vue",
+      bgColor: "#e8f5e9"
+    },
+    {
+      id: 5,
+      name: "Auto Drive Project",
+      source: "Mannat-Themes",
+      icon: "https://mannatthemes.com/selfown/default/images/logos/react.svg",
+      tags: ["REACT", "JAVASCRIPT"],
+      category: "React",
+      bgColor: "#e0f2f1"
+    }
+  ];
+
+  // Filtered Projects
+  const filteredProjects = selectedFilter === "All" 
+    ? projects 
+    : projects.filter(project => project.category === selectedFilter);
+
+  // Testimonials Data
+  const testimonials = [
+    {
+      id: 1,
+      company: "manter.",
+      text: "I feel confident imposing change on myself. It's a lot more fun progressing than looking back. That's why scelerisque pretium dolor, sit amet vehicula erat pelleque need throw curve balls.",
+      author: "LARRY J. AKINS",
+      avatar: "https://mannatthemes.com/selfown/default/images/users/user-3.jpg",
+      rating: 4.5
+    },
+    {
+      id: 2,
+      company: "Technovate.",
+      text: "Working with this team has been an absolute game-changer for our project. The dedication and expertise they bring to the table is unmatched. Highly recommended for anyone looking for quality work.",
+      author: "SARAH MITCHELL",
+      avatar: "https://mannatthemes.com/selfown/default/images/users/user-1.jpg",
+      rating: 5
+    },
+    {
+      id: 3,
+      company: "Digital Hub.",
+      text: "Exceptional service and support throughout the entire process. The attention to detail and commitment to excellence is truly remarkable. A fantastic partner for any digital project.",
+      author: "MICHAEL JOHNSON",
+      avatar: "https://mannatthemes.com/selfown/default/images/users/user-2.jpg",
+      rating: 4.5
+    }
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -12,6 +96,23 @@ const Home: React.FC = () => {
     }, 3000); // Change every 3 seconds
     return () => clearInterval(interval);
   }, []);
+
+  // Auto-rotate testimonials every 2 seconds
+  useEffect(() => {
+    const testimonialInterval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 1000); // Auto-rotate every 5 seconds
+    return () => clearInterval(testimonialInterval);
+  }, [testimonials.length]);
+
+  // Testimonial Navigation
+  const handlePrevTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const handleNextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  };
 
   return (
     <>
@@ -245,26 +346,31 @@ const Home: React.FC = () => {
       <section className="testimonials py-5">
         <div className="container">
           <div className="testimonial-item text-center">
-            <h3 className="testimonial-title mb-4">manter.</h3>
+            <h3 className="testimonial-title mb-4">{testimonials[currentTestimonial].company}</h3>
             <p className="testimonial-text">
-              I feel confident imposing change on myself. It's a lot more fun progressing than looking back. That's why scelerisque pretium dolor, sit amet vehicula erat pelleque need throw curve balls.
+              {testimonials[currentTestimonial].text}
             </p>
             
             <div className="testimonial-author mt-5">
-              <img src="https://i.ibb.co/8xgQZpK/profile.png" alt="Larry J. Akins" className="testimonial-avatar" />
-              <p className="testimonial-name">- LARRY J. AKINS</p>
+              <img src={testimonials[currentTestimonial].avatar} alt={testimonials[currentTestimonial].author} className="testimonial-avatar" />
+              <p className="testimonial-name">- {testimonials[currentTestimonial].author}</p>
               <div className="testimonial-rating">
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star-half-alt"></i>
+                {[...Array(5)].map((_, i) => (
+                  <i 
+                    key={i} 
+                    className={i < Math.floor(testimonials[currentTestimonial].rating) 
+                      ? "fas fa-star" 
+                      : i < testimonials[currentTestimonial].rating 
+                      ? "fas fa-star-half-alt" 
+                      : "far fa-star"}
+                  ></i>
+                ))}
               </div>
             </div>
 
             <div className="testimonial-nav">
-              <button className="testimonial-btn prev"><i className="fas fa-chevron-left"></i></button>
-              <button className="testimonial-btn next"><i className="fas fa-chevron-right"></i></button>
+              <button className="testimonial-btn prev" onClick={handlePrevTestimonial}><i className="fas fa-chevron-left"></i></button>
+              <button className="testimonial-btn next" onClick={handleNextTestimonial}><i className="fas fa-chevron-right"></i></button>
             </div>
           </div>
         </div>
@@ -301,90 +407,50 @@ const Home: React.FC = () => {
 
           {/* Project Filters */}
           <div className="project-filters text-center mb-5">
-            <button className="filter-btn active">All</button>
-            <button className="filter-btn">Angular</button>
-            <button className="filter-btn">MongoDB</button>
-            <button className="filter-btn">Bootstrap</button>
+            <button 
+              className={`filter-btn ${selectedFilter === "All" ? "active" : ""}`}
+              onClick={() => setSelectedFilter("All")}
+            >
+              All
+            </button>
+            <button 
+              className={`filter-btn ${selectedFilter === "Angular" ? "active" : ""}`}
+              onClick={() => setSelectedFilter("Angular")}
+            >
+              Angular
+            </button>
+            <button 
+              className={`filter-btn ${selectedFilter === "MongoDB" ? "active" : ""}`}
+              onClick={() => setSelectedFilter("MongoDB")}
+            >
+              MongoDB
+            </button>
+            <button 
+              className={`filter-btn ${selectedFilter === "Bootstrap" ? "active" : ""}`}
+              onClick={() => setSelectedFilter("Bootstrap")}
+            >
+              Bootstrap
+            </button>
           </div>
 
           {/* Projects Grid */}
           <div className="row g-4">
-            {/* Project 1 */}
-            <div className="col-md-6 col-lg-4">
-              <div className="project-card">
-                <div className="project-icon angular">
-                  <img src="https://mannatthemes.com/selfown/default/images/logos/Angular.svg" alt="React" className="project-icon" />
-                </div>
-                <h5>Auto Drive Project</h5>
-                <p className="project-source">Mannat-Themes <i className="fas fa-external-link-alt"></i></p>
-                <div className="project-tags">
-                  <span className="project-tag">ANGULAR</span>
-                  <span className="project-tag">REACT</span>
-                  <span className="project-tag">JQUERY</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 2 */}
-            <div className="col-md-6 col-lg-4">
-              <div className="project-card">
-                <div className="project-icon bootstrap">
-                  <img src="https://mannatthemes.com/selfown/default/images/logos/bootstrap.svg" alt="Vue.js" className="project-icon" />
-                </div>
-                <h5>Auto Drive Project</h5>
-                <p className="project-source">Mannat-Themes <i className="fas fa-external-link-alt"></i></p>
-                <div className="project-tags">
-                  <span className="project-tag">BOOTSTRAP</span>
-                  <span className="project-tag">CSS</span>
-                  <span className="project-tag">JAVASCRIPT</span>
+            {filteredProjects.map((project) => (
+              <div key={project.id} className="col-md-6 col-lg-4">
+                <div className="project-card">
+                  <div className="project-icon" style={{ backgroundColor: project.bgColor }}>
+                    <img src={project.icon} alt={project.category} className="project-icon-img" />
+                  </div>
+                  <h5 className="project-title">{project.name}</h5>
+                  <p className="project-source">{project.source} <i className="fas fa-external-link-alt"></i></p>
+                  <div className="project-tags">
+                    {project.tags.map((tag, index) => (
+                      <span key={index} className="project-tag">{tag}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {/* Project 3 */}
-            <div className="col-md-6 col-lg-4">
-              <div className="project-card">
-                <div className="project-icon mongodb">
-                  <img src="https://mannatthemes.com/selfown/default/images/logos/mongodb.svg" alt="MongoDB" className="project-icon" />
-                </div>
-                <h5>Auto Drive Project</h5>
-                <p className="project-source">Mannat-Themes <i className="fas fa-external-link-alt"></i></p>
-                <div className="project-tags">
-                  <span className="project-tag">MONGODB</span>
-                  <span className="project-tag">JAVASCRIPT</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 4 */}
-            <div className="col-md-6 col-lg-4">
-              <div className="project-card">
-                <div className="project-icon vue">
-                  <img src="https://mannatthemes.com/selfown/default/images/logos/vue.svg" alt="Vue.js" className="project-icon" />
-                </div>
-                <h5>Auto Drive Project</h5>
-                <p className="project-source">Mannat-Themes <i className="fas fa-external-link-alt"></i></p>
-                <div className="project-tags">
-                  <span className="project-tag">VUE</span>
-                  <span className="project-tag">JAVASCRIPT</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 5 */}
-            <div className="col-md-6 col-lg-4">
-              <div className="project-card">
-                <div className="project-icon react">
-                  <img src="https://mannatthemes.com/selfown/default/images/logos/react.svg" alt="React" className="project-icon" />
-                </div>
-                <h5>Auto Drive Project</h5>
-                <p className="project-source">Mannat-Themes <i className="fas fa-external-link-alt"></i></p>
-                <div className="project-tags">
-                  <span className="project-tag">REACT</span>
-                  <span className="project-tag">JAVASCRIPT</span>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
