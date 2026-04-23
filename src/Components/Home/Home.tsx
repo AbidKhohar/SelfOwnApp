@@ -185,31 +185,56 @@ const Home: React.FC = () => {
       {/* ========== EDUCATION SECTION ========== */}
       <section className="education py-5 bg-light">
         <div className="container">
-          <div className="text-center mb-5">
-            <span className="badge badge-services mb-3">LIFE TIME</span>
-            <h2 className="section-title">Education & Experience</h2>
-            <p className="section-subtitle">
-              We craft digital, graphic and dimensional thinking, to create category<br/>
-              leading brand experiences that have meaning .
-            </p>
-          </div>
-
-          <div className="row">
-            <div className="col-lg-6">
-              {/* Education Item */}
-              <div className="education-item mb-5">
-                <h5 className="education-title">MSc IT Master Degree</h5>
-                <p className="education-date">2010 - 2012</p>
-                <p className="education-description">
-                  Harvard University is an educational institution that offers graduate, professional, and research programs in the fields of and public health.
-                </p>
-                <p className="education-location">Harvard University, Cambridge, MA, United States</p>
+          <div className="row align-items-start">
+            {/* LEFT SIDE - ILLUSTRATION & TITLE */}
+            <div className="col-lg-4 mb-5 mb-lg-0">
+              <div className="education-left">
+                <div className="education-illustration">
+                  <img src="https://mannatthemes.com/selfown/default/images/personal/school.png" alt="Education" className="img-fluid" />
+                </div>
+                <h3 className="education-left-title">Education</h3>
               </div>
             </div>
 
-            <div className="col-lg-6">
-              <div className="education-image text-center">
-                <img src="https://i.ibb.co/3T8ZQkH/about.jpg" alt="Education" className="img-fluid rounded" />
+            {/* RIGHT SIDE - EDUCATION ITEMS */}
+            <div className="col-lg-8">
+              {/* Education Item 1 */}
+              <div className="education-item-new mb-4">
+                <div className="education-item-header">
+                  <span className="education-item-icon">—</span>
+                  <h5 className="education-item-title">MSc IT Master Degree</h5>
+                  <span className="education-item-date">2010 - 2012</span>
+                </div>
+                <p className="education-item-description">
+                  Harvard University is an educational institution that offers graduate, professional, and research programs in the fields of and public health.
+                </p>
+                <p className="education-item-location">Harvard University, Cambridge, MA, United States</p>
+              </div>
+
+              {/* Education Item 2 */}
+              <div className="education-item-new mb-4">
+                <div className="education-item-header">
+                  <span className="education-item-icon">+</span>
+                  <h5 className="education-item-title">BCA college complete course</h5>
+                  <span className="education-item-date">2007 - 2010</span>
+                </div>
+                <p className="education-item-description">
+                  Specialized in computer applications and information technology fundamentals with focus on software development and database management.
+                </p>
+                <p className="education-item-location">ABC College, New Delhi, India</p>
+              </div>
+
+              {/* Education Item 3 */}
+              <div className="education-item-new">
+                <div className="education-item-header">
+                  <span className="education-item-icon">+</span>
+                  <h5 className="education-item-title">High / Higher secondary school</h5>
+                  <span className="education-item-date">1999 - 2007</span>
+                </div>
+                <p className="education-item-description">
+                  Completed higher secondary education with focus on science stream including mathematics, physics, and chemistry.
+                </p>
+                <p className="education-item-location">XYZ School, Mumbai, India</p>
               </div>
             </div>
           </div>
