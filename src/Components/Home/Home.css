@@ -166,6 +166,7 @@ body {
 .hero-image {
   flex: 1;
   text-align: center;
+    background: linear-gradient(135deg, #fcfaf8 0%, #f5ede5 100%);
 }
 
 .hero-image img {
