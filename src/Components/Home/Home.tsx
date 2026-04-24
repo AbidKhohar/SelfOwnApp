@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
-import { FaGithub, FaTwitter, FaGoogle, FaLinkedin, FaAndroid } from "react-icons/fa";
+import { FaGithub, FaTwitter, FaGoogle, FaLinkedin,FaChevronLeft,FaChevronRight, FaDollarSign,FaCheck, FaPhone, FaEnvelope  } from "react-icons/fa";
+import { FiLayers } from "react-icons/fi";
+
 
 const Home: React.FC = () => {
   const professions = ["Flutter", "React", "Python"];
@@ -252,7 +254,10 @@ const Home: React.FC = () => {
             {/* Service 1 */}
             <div className="col-md-4">
               <div className="service-card">
-                
+                 <div className="service-icon">
+                  <i className="fas fa-dollar-sign"><FiLayers/>
+</i>
+                </div>
                 <h6>Awesome Support</h6>
                 <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               </div>
@@ -262,7 +267,8 @@ const Home: React.FC = () => {
             <div className="col-md-4">
               <div className="service-card">
                 <div className="service-icon">
-                  <i className="fas fa-dollar-sign"></i>
+                  <i className="fas fa-dollar-sign"><FaDollarSign />
+</i>
                 </div>
                 <h6>Dynamic Growth</h6>
                 <p>Credibly brand standards compliant growth strategies that provide value to your business.</p>
@@ -273,7 +279,8 @@ const Home: React.FC = () => {
             <div className="col-md-4">
               <div className="service-card">
                 <div className="service-icon">
-                  <i className="fas fa-check-circle"></i>
+                  <i className="fas fa-check-circle"><FaCheck />
+</i>
                 </div>
                 <h6>Branding Identity</h6>
                 <p>Separated they live in a fictitious island that live in a fictitious island.</p>
@@ -369,8 +376,8 @@ const Home: React.FC = () => {
             </div>
 
             <div className="testimonial-nav">
-              <button className="testimonial-btn prev" onClick={handlePrevTestimonial}><i className="fas fa-chevron-left"></i></button>
-              <button className="testimonial-btn next" onClick={handleNextTestimonial}><i className="fas fa-chevron-right"></i></button>
+              <button className="testimonial-btn prev" onClick={handlePrevTestimonial}><i className="fas fa-chevron-left"><FaChevronLeft /></i></button>
+              <button className="testimonial-btn next" onClick={handleNextTestimonial}><i className="fas fa-chevron-right"><FaChevronRight /></i></button>
             </div>
           </div>
         </div>
@@ -538,13 +545,14 @@ const Home: React.FC = () => {
                   <textarea placeholder="Enter your message..." className="form-control contact-input" rows={5}></textarea>
                 </div>
               </form>
-            </div>
+              <button className="btn btn-primary mt-3">Send Message</button>
 
+            </div>
             <div className="col-lg-6">
               <div className="contact-info">
                 <div className="contact-info-item">
                   <div className="contact-info-icon">
-                    <i className="fas fa-phone"></i>
+                    <i className="fas fa-phone"><FaPhone/></i>
                   </div>
                   <div>
                     <h6>+1234 567 89</h6>
@@ -554,7 +562,7 @@ const Home: React.FC = () => {
 
                 <div className="contact-info-item">
                   <div className="contact-info-icon">
-                    <i className="fas fa-envelope"></i>
+                    <i className="fas fa-envelope"><FaEnvelope/></i>
                   </div>
                   <div>
                     <h6>example@example.com</h6>
