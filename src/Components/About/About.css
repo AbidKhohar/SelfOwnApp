@@ -434,3 +434,98 @@
 }
 
 
+
+
+.education-section {
+  background: #f8fafc;
+}
+
+/* TIMELINE BOX */
+.timeline-item {
+  border: 2px dashed #ddd;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  position: relative;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.timeline-item:hover {
+  transform: translateY(-5px);
+}
+
+/* ICON BOX */
+.icon-box {
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  background: #f1f5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+
+/* YEAR CIRCLE */
+.year-circle {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* COLORS */
+.timeline-item.red {
+  border-color: #fca5a5;
+}
+.timeline-item.red .year-circle {
+  background: linear-gradient(135deg, #f87171, #ef4444);
+}
+
+.timeline-item.yellow {
+  border-color: #fde68a;
+}
+.timeline-item.yellow .year-circle {
+  background: linear-gradient(135deg, #facc15, #eab308);
+}
+
+.timeline-item.green {
+  border-color: #86efac;
+}
+.timeline-item.green .year-circle {
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+}
+
+/* ICON COLORS */
+.timeline-item.red .icon-box {
+  color: #ef4444;
+}
+.timeline-item.yellow .icon-box {
+  color: #eab308;
+}
+.timeline-item.green .icon-box {
+  color: #22c55e;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .year-circle {
+    margin-top: 20px;
+  }
+
+  .icon-box {
+    margin-bottom: 15px;
+  }
+
+  .timeline-item .row {
+    text-align: center;
+  }
+}
+
+
