@@ -58,6 +58,15 @@ body {
   overflow: hidden;
   padding-top: 80px;
 }
+.hero-image img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #fcfaf8 0%, #f5ede5 100%);
+  border-radius: 20px;
+  padding: 20px;
+}
 
 /* Layout */
 .hero-wrapper {

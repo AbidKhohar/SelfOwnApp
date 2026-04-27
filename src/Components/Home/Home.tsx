@@ -235,9 +235,6 @@ const Home: React.FC = () => {
 
 </div>
 
-      {/* ========== SKILLS SECTION ========== */}
-      
-
       {/* ========== SERVICES SECTION ========== */}
       <section className="services py-5">
         <div className="container">
