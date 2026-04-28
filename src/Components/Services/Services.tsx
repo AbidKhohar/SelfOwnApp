@@ -50,7 +50,7 @@ function Services() {
         <div className="container-fluid h-100">
           <div className="row justify-content-center align-items-center h-100">
             <div className="col-12 text-center">
-              <h5 className="page-title fw-bold">Projects</h5>
+              <h5 className="page-title fw-bold">Services</h5>
             </div>
           </div>
         </div>
