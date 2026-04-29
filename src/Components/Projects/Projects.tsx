@@ -1,6 +1,6 @@
 
 
-import React, { useState } from "react";
+import { useState } from "react";
 
 function Projects() {
 
@@ -158,3 +158,4 @@ function Projects() {
 }
 
 export default Projects
+ 

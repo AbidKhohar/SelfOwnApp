@@ -1,4 +1,3 @@
-import React from 'react'
 import './Blogs.css'
 
 function Blogs() {
@@ -74,7 +73,7 @@ function Blogs() {
                       </div>
                     </div>
 
-                    <a href="#" className="read-more">
+                    <a href="/BlogsDetails" className="read-more">
                       Read more →
                     </a>
 

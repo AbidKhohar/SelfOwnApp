@@ -1,10 +1,8 @@
-import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import './Navbar.css'
-import { FiAlignCenter } from "react-icons/fi";
 
 
-function Navbar() {
+function Navbar        () {
   const location = useLocation()
 
   return (
@@ -37,8 +35,8 @@ function Navbar() {
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <Link 
-                className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} 
-                to="/"
+                className={`nav-link ${location.pathname === '/home' ? 'active' : ''}`} 
+                to="/home"
               >
                 Home
               </Link>

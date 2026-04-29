@@ -539,8 +539,7 @@ const Home: React.FC = () => {
                 </div>
 
                 <div className="mb-3">
-                  <textarea placeholder="Enter your message..." className="form-control contact-input" rows={5}></textarea>
-                </div>
+.,                </div>
               </form>
               <button className="btn btn-primary mt-3">Send Message</button>
 
