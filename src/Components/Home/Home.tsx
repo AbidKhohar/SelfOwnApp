@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
-import { FaGithub, FaTwitter, FaGoogle, FaLinkedin,FaChevronLeft,FaChevronRight, FaDollarSign,FaCheck, FaPhone, FaEnvelope  } from "react-icons/fa";
+ import { Link } from 'react-router-dom';
+
+import { FaGithub, FaTwitter,FaChevronLeft,FaChevronRight, FaDollarSign,FaCheck, FaPhone, FaEnvelope  } from "react-icons/fa";
 import { FiLayers } from "react-icons/fi";
+import { RiLinkedinFill } from "react-icons/ri";
+
+import { LiaGoogle } from "react-icons/lia";
+
 
 
 const Home: React.FC = () => {
@@ -9,6 +15,28 @@ const Home: React.FC = () => {
   const [currentProfession, setCurrentProfession] = useState(0);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [selectedFilter, setSelectedFilter] = useState("All");
+
+const services = [
+    {
+      icon: <FiLayers />,
+      title: "Awesome Support",
+      desc: "Some quick example text to build on the card title and make up the bulk of the card's content platform.",
+      color: "icon-orange",
+    },
+    {
+      icon: <FaDollarSign />,
+      title: "Dynamic Growth",
+      desc: "Credibly brand standards compliant growth strategies that provide value to your business.",
+      color: "icon-blue",
+    },
+    {
+      icon: <FaCheck />,
+      title: "Branding Identity",
+      desc: "Separated they live in a fictitious island that live in a fictitious island.",
+      color: "icon-green",
+    },
+    
+  ];
 
   // Projects Data
   const projects = [
@@ -76,19 +104,11 @@ const Home: React.FC = () => {
     },
     {
       id: 2,
-      company: "Technovate.",
+      company: "Wateransfer.",
       text: "Working with this team has been an absolute game-changer for our project. The dedication and expertise they bring to the table is unmatched. Highly recommended for anyone looking for quality work.",
       author: "SARAH MITCHELL",
       avatar: "https://mannatthemes.com/selfown/default/images/users/user-1.jpg",
       rating: 5
-    },
-    {
-      id: 3,
-      company: "Digital Hub.",
-      text: "Exceptional service and support throughout the entire process. The attention to detail and commitment to excellence is truly remarkable. A fantastic partner for any digital project.",
-      author: "MICHAEL JOHNSON",
-      avatar: "https://mannatthemes.com/selfown/default/images/users/user-2.jpg",
-      rating: 4.5
     }
   ];
 
@@ -132,18 +152,16 @@ const Home: React.FC = () => {
             <div className="hero-content">
               <p className="hero-subtitle">Hi, I'm David Williamson</p>
 
-              <h1 className="hero-title">
+              <p className="hero-title">
                 I'm a freelance <span className="highlight animate-profession">{professions[currentProfession]}</span> Developer
-              </h1>
+              </p>
 
               {/* <p className="hero-description">
                 I design and develop modern web & mobile applications with clean UI and powerful backend systems.
               </p> */}
 
               <div className="hero-buttons">
-                <a  className="btn btn-primary">Download CV</a>
-
-                
+                <a  className="btn btn-hire">Download CV</a>
               </div>
             </div>
 
@@ -158,7 +176,7 @@ const Home: React.FC = () => {
       
       {/* LEFT SIDE */}
       <div className="col-lg-6">
-        <h2 className="section-title">Personal Details</h2>
+        <mark>Personal Details</mark>
         <p className="section-subtitle">
           It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
         </p>
@@ -166,11 +184,12 @@ const Home: React.FC = () => {
         {/* Social Icons */}
         <div className="social-links mt-4">
           <a href="#" className="social-link"><FaGithub />
-<i className="fab fa-github"></i></a>
+</a>
           <a href="#" className="social-link"> <FaTwitter />
-<i className="fab fa-twitter"></i></a>
-          <a href="#" className="social-link"><FaGoogle/><i className="fab fa-google"></i></a>
-          <a href="#" className="social-link"><FaLinkedin/><i className="fab fa-linkedin"></i></a>
+</a>
+          <a href="#" className="social-link"><LiaGoogle />
+</a>
+          <a href="#" className="social-link"><RiLinkedinFill/></a>
         </div>
       </div>
 
@@ -179,22 +198,22 @@ const Home: React.FC = () => {
         <div className="details-box">
           
           <div className="detail-row">
-            <span className="label">Date of birth</span>
+            <span className="label">Date of birth:</span>
             <span className="value">06 June 1989</span>
           </div>
 
           <div className="detail-row">
-            <span className="label">Spoken Languages</span>
+            <span className="label">Spoken Languages:</span>
             <span className="value">English - French - German</span>
           </div>
 
           <div className="detail-row">
-            <span className="label">Nationality</span>
+            <span className="label">Nationality:</span>
             <span className="value">USA</span>
           </div>
 
           <div className="detail-row">
-            <span className="label">Interest</span>
+            <span className="label">Interest:</span>
             <span className="value">Music, Reading, Journey</span>
           </div>
 
@@ -227,7 +246,7 @@ const Home: React.FC = () => {
       </div>
 
       <div className="skill-right">
-        <h5>{skill.name}</h5>
+        <p>{skill.name}</p>
         <p>{skill.exp}</p>
       </div>
     </div>
@@ -235,61 +254,58 @@ const Home: React.FC = () => {
 
 </div>
 
+
+
+
+
+
+
       {/* ========== SERVICES SECTION ========== */}
-      <section className="services py-5">
-        <div className="container">
+      <section className="services py-5 mt-5">
           <div className="text-center mb-5">
-            <span className="badge badge-services mb-3">SERVICES</span>
-            <h2 className="section-title">Our Services</h2>
+            <span className="badge badge-services">SERVICES</span>
+            <h4 className=" mt-5">Our Services</h4>
             <p className="section-subtitle">
               We craft digital, graphic and dimensional thinking, to create category<br/>
               leading brand experiences that have meaning .
             </p>
           </div>
 
+         
+      {/* SERVICES GRID */}
+        <div className="container">
           <div className="row g-4">
-            {/* Service 1 */}
-            <div className="col-md-4">
-              <div className="service-card">
-                 <div className="service-icon">
-                  <i className="fas fa-dollar-sign"><FiLayers/>
-</i>
+            
+            {services.map((item, index) => (
+              <div className="col-md-4" key={index}>
+                <div className="service-card">
+                  <div className={`service-icon ${item.color}`}>
+                    {item.icon}
+                  </div>
+                  <h6>{item.title}</h6>
+                  <p>{item.desc}</p>
                 </div>
-                <h6>Awesome Support</h6>
-                <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               </div>
-            </div>
-
-            {/* Service 2 */}
-            <div className="col-md-4">
-              <div className="service-card">
-                <div className="service-icon">
-                  <i className="fas fa-dollar-sign"><FaDollarSign />
-</i>
-                </div>
-                <h6>Dynamic Growth</h6>
-                <p>Credibly brand standards compliant growth strategies that provide value to your business.</p>
-              </div>
-            </div>
-
-            {/* Service 3 */}
-            <div className="col-md-4">
-              <div className="service-card">
-                <div className="service-icon">
-                  <i className="fas fa-check-circle"><FaCheck />
-</i>
-                </div>
-                <h6>Branding Identity</h6>
-                <p>Separated they live in a fictitious island that live in a fictitious island.</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
+<div/>
+
       </section>
 
       {/* ========== EDUCATION SECTION ========== */}
       <section className="education py-5 bg-light">
         <div className="container">
+          <div className="text-center mb-5">
+            <span className="badge badge-services">Life Time
+</span>
+            <h4 className=" mt-5">Education & Experience
+</h4>
+            <p className="section-subtitle">
+              We craft digital, graphic and dimensional thinking, to create category<br/>
+              leading brand experiences that have meaning .
+            </p>
+          </div>
           <div className="row align-items-start">
             {/* LEFT SIDE - ILLUSTRATION & TITLE */}
             <div className="col-lg-4 mb-5 mb-lg-0">
@@ -346,11 +362,65 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+
+{/* ========== EDUCATION SECTION ========== */}
+      <section className="education py-5 bg-light">
+        <div className="container">
+          
+          <div className="row align-items-start">
+            {/* LEFT SIDE - ILLUSTRATION & TITLE */}
+            <div className="col-lg-4 mb-5 mb-lg-0">
+              <div className="education-left">
+                <div className="education-illustration">
+                  <img src="https://mannatthemes.com/selfown/default/images/personal/job.png" alt="Education" className="img-fluid" />
+                </div>
+                <h3 className="education-left-title">Experince</h3>
+              </div>
+            </div>
+
+            {/* RIGHT SIDE - EDUCATION ITEMS */}
+            <div className="col-lg-8">
+              {/* Education Item 1 */}
+              <div className="education-item-new mb-4">
+                <div className="education-item-header">
+                  <span className="education-item-icon">—</span>
+                  <h5 className="education-item-title">ABC themes - Web Design IT Company</h5>
+                  <span className="education-item-date">2010 - 2012</span>
+                </div>
+                <p className="education-item-location">Harvard University, Cambridge, MA, United States</p>
+              </div>
+
+              {/* Education Item 2 */}
+              <div className="education-item-new mb-4">
+                <div className="education-item-header">
+                  <span className="education-item-icon">+</span>
+                  <h5 className="education-item-title">DEF Themes - Creative full stack web design & development</h5>
+                  <span className="education-item-date">2016 - 2019</span>
+                </div>
+              
+                <p className="education-item-location">ABC College, New Delhi, India</p>
+              </div>
+
+              {/* Education Item 3 */}
+              <div className="education-item-new">
+                <div className="education-item-header">
+                  <span className="education-item-icon">+</span>
+                  <h5 className="education-item-title">GHI Themes - Web & App IT Company</h5>
+                  <span className="education-item-date">2023 - 2015</span>
+                </div>
+                <p className="education-item-location">XYZ School, Mumbai, India</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* ========== TESTIMONIALS SECTION ========== */}
       <section className="testimonials py-5">
         <div className="container">
           <div className="testimonial-item text-center">
-            <h3 className="testimonial-title mb-4">{testimonials[currentTestimonial].company}</h3>
+            <p className="testimonial-title mb-4">{testimonials[currentTestimonial].company}</p>
             <p className="testimonial-text">
               {testimonials[currentTestimonial].text}
             </p>
@@ -373,8 +443,8 @@ const Home: React.FC = () => {
             </div>
 
             <div className="testimonial-nav">
-              <button className="testimonial-btn prev" onClick={handlePrevTestimonial}><i className="fas fa-chevron-left"><FaChevronLeft /></i></button>
-              <button className="testimonial-btn next" onClick={handleNextTestimonial}><i className="fas fa-chevron-right"><FaChevronRight /></i></button>
+              <button className="testimonial-btn prev" onClick={handlePrevTestimonial}><FaChevronLeft /></button>
+              <button className="testimonial-btn next" onClick={handleNextTestimonial}><FaChevronRight /></button>
             </div>
           </div>
         </div>
@@ -401,8 +471,11 @@ const Home: React.FC = () => {
       {/* ========== PROJECTS SECTION ========== */}
       <section className="projects py-5">
         <div className="container">
-          <div className="text-center mb-5">
-            <h2 className="section-title">My Projects</h2>
+          
+          <div className="text-center mb-5 mt-5">
+                     <span className="badge badge-services">WORK
+</span>
+            <h5 className="mt-5">My Projects</h5>
             <p className="section-subtitle">
               We craft digital, graphic and dimensional thinking, to create category<br/>
               leading brand experiences that have meaning .
@@ -459,12 +532,93 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* ========== BLOGS SECTION ========== */}
+
+
+
+ {/* BLOGS SECTION */}
       <section className="blogs py-5 bg-light">
         <div className="container">
+
           <div className="text-center mb-5">
             <span className="badge badge-services mb-3">BLOGS</span>
             <h2 className="section-title">Latest news & insights</h2>
+            <p className="section-subtitle">
+              We craft digital, graphic and dimensional thinking, to create category
+              leading brand experiences that have meaning.
+            </p>
+          </div>
+
+          <div className="row g-4">
+
+            {/* ===== BLOG CARD (REUSABLE) ===== */}
+            {[1,2,3].map((item, index) => (
+              <div className="col-md-6 col-lg-4" key={index}>
+                <div className="blog-card">
+
+                  <div className="blog-image">
+                    <img
+                      src={`https://mannatthemes.com/selfown/default/images/personal/${item}.jpg`}
+                      alt="Blog"
+                      className="img-fluid"
+                    />
+                  </div>
+
+                  <h5 className="blog-title">
+                    {index % 2 === 0
+                      ? "How to design engaging social media content"
+                      : "The future of web design and development"}
+                  </h5>
+
+                  {/* AUTHOR SECTION */}
+                  <div className="blog-meta d-flex justify-content-between align-items-center">
+
+                    <div className="d-flex align-items-center gap-2">
+                      <img
+                        src={
+                          index % 2 === 0
+                            ? "https://randomuser.me/api/portraits/women/44.jpg"
+                            : "https://randomuser.me/api/portraits/men/32.jpg"
+                        }
+                        alt="author"
+                        className="author-img"
+                      />
+                      <div>
+                        <span className="author-name">
+                          {index % 2 === 0 ? "Charles Woodall" : "Jarvis Owen"}
+                        </span>
+                        <br />
+                        <span className="author-date">
+                          {index % 2 === 0 ? "14 Feb 2022" : "12 Jan 2022"}
+                        </span>
+                      </div>
+                    </div>
+
+
+<Link to="/BlogsDetails" className="read-more">
+  Read more →
+</Link>
+
+                  </div>
+                </div>
+              </div>
+            ))}
+
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+{/* 
+      {/* ========== BLOGS SECTION ========== */}
+      {/* <section className="blogs py-5 bg-light">
+        <div className="container">
+          <div className="text-center mb-5">
+            <span className="badge badge-services mb-3">BLOGS</span>
+            <h5 className="">Latest news & insights</h5>
             <p className="section-subtitle">
               We craft digital, graphic and dimensional thinking, to create category<br/>
               leading brand experiences that have meaning.
@@ -472,7 +626,6 @@ const Home: React.FC = () => {
           </div>
 
           <div className="row g-4">
-            {/* Blog 1 */}
             <div className="col-md-6 col-lg-4">
               <div className="blog-card">
                 <div className="blog-image">
@@ -486,7 +639,6 @@ const Home: React.FC = () => {
 
 
 
-            {/* Blog 2 */}
             <div className="col-md-6 col-lg-4">
               <div className="blog-card">
                 <div className="blog-image">
@@ -496,7 +648,6 @@ const Home: React.FC = () => {
               </div>
             </div>
 
-            {/* Blog 3 */}
             <div className="col-md-6 col-lg-4">
               <div className="blog-card">
                 <div className="blog-image">
@@ -507,7 +658,10 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */} 
+
+
+
 
       {/* ========== CONTACT SECTION ========== */}
       <section className="contact py-5">
@@ -548,7 +702,7 @@ const Home: React.FC = () => {
               <div className="contact-info">
                 <div className="contact-info-item">
                   <div className="contact-info-icon">
-                    <i className="fas fa-phone"><FaPhone/></i>
+                    <FaPhone/>
                   </div>
                   <div>
                     <h6>+1234 567 89</h6>
@@ -558,7 +712,7 @@ const Home: React.FC = () => {
 
                 <div className="contact-info-item">
                   <div className="contact-info-icon">
-                    <i className="fas fa-envelope"><FaEnvelope/></i>
+                    <FaEnvelope/>
                   </div>
                   <div>
                     <h6>example@example.com</h6>
