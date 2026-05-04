@@ -3,53 +3,35 @@
 
 
 
-/* ========== ABOUT HERO SECTION ========== */
-.about-hero {
-  background: linear-gradient(135deg, #0f172a 0%, #1a2642 100%);
-  color: white;
-  text-align: center;
-  width: 100vw;
-  height: 400px;
+.resume-hero {
   position: relative;
-  overflow: hidden;
-  margin-left: calc(-50vw + 50%);
-  padding: 0;
+  height: 320px;
+  background: #000;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
-.about-hero::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -10%;
-  width: 400px;
-  height: 400px;
-  background: rgba(20, 184, 166, 0.1);
-  border-radius: 50%;
-  z-index: 1;
+/* TEXT */
+.hero-title {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
 }
 
-.about-hero::after {
-  content: '';
+/* 🔥 WAVE */
+.wave {
   position: absolute;
   bottom: 0;
-  left: 0;
   width: 100%;
-  height: 100px;
-  background: linear-gradient(180deg, transparent 0%, rgba(20, 184, 166, 0.05) 100%);
-  z-index: 1;
+  line-height: 0;
 }
 
-.about-hero .page-title {
-  position: relative;
-  z-index: 2;
-}
-
-.about-hero .container-fluid {
-  position: relative;
-  z-index: 2;
+.wave svg {
+  display: block;
+  width: 100%;
+  height: 120px;
 }
 
 .page-title {
@@ -271,7 +253,11 @@
 .personal-details {
   background: #f9fafb;
 }
-
+/* Heading paragraph width control */
+.section-text {
+  max-width: 650px;   /* 🔥 ye center jaisa look deta hai */
+  line-height: 1.7;
+}
 /* IMAGE */
 .profile-img {
   max-width: 80%;
@@ -527,5 +513,9 @@
     text-align: center;
   }
 }
+
+
+
+
 
 
