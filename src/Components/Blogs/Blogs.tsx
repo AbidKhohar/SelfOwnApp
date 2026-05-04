@@ -1,32 +1,41 @@
 import './Blogs.css'
+import '../About/About.css';
+ import { Link } from 'react-router-dom';
+
 
 function Blogs() {
   return (
     <div className="blogs-wrapper">
 
-      {/* About Hero Section */}
-      <section className="about-hero">
-        <div className="container-fluid h-100">
-          <div className="row justify-content-center align-items-center h-100">
-            <div className="col-12 text-center">
-              <h5 className="page-title fw-bold">BLOGS</h5>
-            </div>
-          </div>
-        </div>
-      </section>
+           {/* ===== HERO SECTION (UPDATED) ===== */}
+     <section className="resume-hero">
+  <div className="container text-center hero-content">
+    <h1 className="hero-title">BLOGS</h1>
+  </div>
+
+  {/* 🔥 SVG WAVE */}
+  <div className="wave">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path 
+        d="M0,80 C300,140 1100,0 1440,80 L1440,200 L0,200 Z" 
+        fill="#f5f5f5"
+      ></path>
+    </svg>
+  </div>
+</section>
 
       {/* BLOGS SECTION */}
       <section className="blogs py-5 bg-light">
-        <div className="container">
+        <div className="container mt-5">
 
-          <div className="text-center mb-5">
+          {/* <div className="text-center mb-5">
             <span className="badge badge-services mb-3">BLOGS</span>
             <h2 className="section-title">Latest news & insights</h2>
             <p className="section-subtitle">
               We craft digital, graphic and dimensional thinking, to create category
               leading brand experiences that have meaning.
             </p>
-          </div>
+          </div> */}
 
           <div className="row g-4">
 
@@ -73,9 +82,10 @@ function Blogs() {
                       </div>
                     </div>
 
-                    <a href="/BlogsDetails" className="read-more">
-                      Read more →
-                    </a>
+
+<Link to="/BlogsDetails" className="read-more">
+  Read more →
+</Link>
 
                   </div>
                 </div>

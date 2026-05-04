@@ -4,6 +4,8 @@ import { FaGithub, FaTwitter, FaGoogle, FaLinkedin} from "react-icons/fa";
 import { IoMdTrophy } from "react-icons/io";
 import { GiGraduateCap } from "react-icons/gi";
 import { GoPeople } from "react-icons/go";
+import { BiSolidSchool } from "react-icons/bi";
+
 
 
 
@@ -11,16 +13,22 @@ import { GoPeople } from "react-icons/go";
 const About: React.FC = () => {
   return (
     <>
-      {/* About Hero Section */}
-      <section className="about-hero">
-        <div className="container-fluid h-100">
-          <div className="row justify-content-center align-items-center h-100">
-            <div className="col-12 text-center">
-              <h1 className="page-title fw-bold">About Me</h1>
-            </div>
-          </div>
-        </div>
-      </section>
+              {/* ===== HERO SECTION (UPDATED) ===== */}
+     <section className="resume-hero">
+  <div className="container text-center hero-content">
+    <h1 className="hero-title">ABOUT ME</h1>
+  </div>
+
+  {/* 🔥 SVG WAVE */}
+  <div className="wave">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path 
+        d="M0,80 C300,140 1100,0 1440,80 L1440,200 L0,200 Z" 
+        fill="#f5f5f5"
+      ></path>
+    </svg>
+  </div>
+</section>
 
       <section className="personal-details py-5">
   <div className="container">
@@ -37,7 +45,7 @@ const About: React.FC = () => {
 
       {/* RIGHT SIDE CONTENT */}
       <div className="col-lg-6">
-        <h2 className="section-title">Personal Details</h2>
+        <h5 className="">Personal Details</h5>
 
         <p className="section-subtitle">
           It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
@@ -66,14 +74,16 @@ const About: React.FC = () => {
           </div>
         </div>
 
+
+
         {/* SOCIAL ICONS */}
          <div className="social-links mt-4">
                  <a href="#" className="social-link"><FaGithub />
-       <i className="fab fa-github"></i></a>
+       </a>
                  <a href="#" className="social-link"> <FaTwitter />
-       <i className="fab fa-twitter"></i></a>
-                 <a href="#" className="social-link"><FaGoogle/><i className="fab fa-google"></i></a>
-                 <a href="#" className="social-link"><FaLinkedin/><i className="fab fa-linkedin"></i></a>
+       </a>
+                 <a href="#" className="social-link"><FaGoogle/></a>
+                 <a href="#" className="social-link"><FaLinkedin/></a>
                </div>
              </div>
 
@@ -109,6 +119,7 @@ const About: React.FC = () => {
               className="skill-img"
             />
 
+
             {/* RIGHT TEXT */}
             <div>
               <h6 className="mb-1 fw-semibold">{skill.name}</h6>
@@ -131,126 +142,137 @@ const About: React.FC = () => {
 
 
 
+<div className="container">
 
-
-
+ {/* HERO */}
+ {/* TIMELINE */}
 <section className="education-section py-5">
-  <div className="container text-center">
 
+  {/* 🔥 CENTERED HEADER */}
+  <div className="container text-center mb-5">
     <span className="badge bg-light text-success mb-2">LIFE TIME</span>
+
     <h2 className="fw-bold mb-3">Education & Experience</h2>
-    <p className="text-muted mb-5">
-      We craft digital, graphic and dimensional thinking, to create category<br/>
+
+    <p className="text-muted mx-auto section-text">
+      We craft digital, graphic and dimensional thinking, to create category
       leading brand experiences that have meaning.
     </p>
-
-    {/* ITEM 1 */}
-    <div className="timeline-item red">
-      <div className="row align-items-center">
-
-        <div className="col-md-2 text-center">
-          <div className="icon-box">
-            <i className="bi bi-trophy"><IoMdTrophy/></i>
-          </div>
-        </div>
-
-        <div className="col-md-7 text-start">
-          <p className="fw-bold">GHI Themes - Web & App IT Company</p>
-          <p className="text-muted mb-0">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada tellus lorem.
-          </p>
-        </div>
-
-        <div className="col-md-3 text-center">
-          <div className="year-circle">2019-22</div>
-        </div>
-
-      </div>
-    </div>
-
-    {/* ITEM 2 */}
-    <div className="timeline-item yellow">
-      <div className="row align-items-center">
-
-        <div className="col-md-3 text-center">
-          <div className="year-circle">2014-18</div>
-        </div>
-
-        <div className="col-md-7 text-start">
-          <p className="fw-bold">ABC Themes - Web Design IT Company</p>
-          <p className="text-muted mb-0">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada tellus lorem.
-          </p>
-        </div>
-
-        <div className="col-md-2 text-center">
-          <div className="icon-box">
-            <i className="bi bi-people"><GoPeople/></i>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    {/* ITEM 3 */}
-    <div className="timeline-item green">
-      <div className="row align-items-center">
-
-        <div className="col-md-2 text-center">
-          <div className="icon-box">
-            <i className="bi bi-mortarboard"><GiGraduateCap/></i>
-          </div>
-        </div>
-
-        <div className="col-md-7 text-start">
-          <p className="fw-bold">MSc IT Master Degree</p>
-          <p className="text-muted mb-0">
-            Harvard University is an educational institution that offers graduate, professional programs.
-          </p>
-        </div>
-
-        <div className="col-md-3 text-center">
-          <div className="year-circle">2012-13</div>
-        </div>
-
-
-
-
-
-      </div>
-      
-    </div>
-
-
-
-    {/* ITEM 2 */}
-    <div className="timeline-item yellow">
-      <div className="row align-items-center">
-
-        <div className="col-md-3 text-center">
-          <div className="year-circle">2014-18</div>
-        </div>
-
-        <div className="col-md-7 text-start">
-          <p className="fw-bold">High / Higher Secondry School</p>
-          <p className="text-muted mb-0">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada tellus lorem.
-          </p>
-        </div>
-
-        <div className="col-md-2 text-center">
-          <div className="icon-box">
-            <i className="bi bi-people"><GoPeople/></i>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
   </div>
+
+  {/* TIMELINE ITEMS */}
+  <div className="container">
+    ...
+  </div>
+
 </section>
+      
+
+      {/* TIMELINE */}
+      <section className="education-section">
+       
+        <div className="container">
+
+          {/* ITEM 1 */}
+          <div className="timeline-item red">
+            
+            <div className="row align-items-center">
+
+              <div className="col-md-2 text-center">
+                <div className="icon-box">
+                  <IoMdTrophy />
+                </div>
+              </div>
+
+              <div className="col-md-7 text-center">
+                <h5 className="fw-bold mb-2">GHI Themes - Web & App IT Company</h5>
+                <p className="text-muted small mb-0">
+Princeton University is an educational institution. Princeton University is an educational institution. Princeton University is an educational institution.                </p>
+              </div>
+
+              <div className="col-md-3 text-center">
+                <div className="year-circle peel red">2019-22</div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* ITEM 2 */}
+          <div className="timeline-item yellow">
+            <div className="row align-items-center">
+
+              <div className="col-md-3 text-center">
+                <div className="year-circle peel yellow">2014-18</div>
+              </div>
+
+              <div className="col-md-7 text-center">
+                <h5 className="fw-bold mb-2">ABC Themes - Web Design IT Company</h5>
+                <p className="text-muted small mb-0">
+Princeton University is an educational institution. Princeton University is an educational institution. Princeton University is an educational institution.                </p>
+              </div>
+
+              <div className="col-md-2 text-center">
+                <div className="icon-box">
+                  <GoPeople />
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* ITEM 3 */}
+          <div className="timeline-item green">
+            <div className="row align-items-center">
+
+              <div className="col-md-2 text-center">
+                <div className="icon-box">
+                  <GiGraduateCap />
+                </div>
+              </div>
+
+              <div className="col-md-7 text-center">
+                <h5 className="fw-bold mb-2">MSc IT Master Degree</h5>
+                <p className="text-muted small mb-0">
+Princeton University is an educational institution. Princeton University is an educational institution. Princeton University is an educational institution.                </p>
+              </div>
+
+              <div className="col-md-3 text-center">
+                <div className="year-circle peel green">2012-13</div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* ITEM 4 */}
+          <div className="timeline-item blue">
+            <div className="row align-items-center">
+
+              <div className="col-md-3 text-center">
+                <div className="year-circle peel blue">2007-08</div>
+              </div>
+
+              <div className="col-md-7 text-center">
+                <h5 className="fw-bold mb-2">High / Higher Secondary School</h5>
+                <p className="text-muted small mb-0">
+Princeton University is an educational institution that offers graduate, professional, and research programs in the fields of and public health.
 
 
+                </p>
+              </div>
+
+              <div className="col-md-2 text-center">
+                <div className="icon-box">
+                  <BiSolidSchool />
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+</div>
 
 
       {/* ========== FREELANCER CTA SECTION ========== */}

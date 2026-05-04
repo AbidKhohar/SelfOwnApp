@@ -1,6 +1,7 @@
 import { FaDollarSign, FaCheck } from "react-icons/fa";
 import { FiLayers } from "react-icons/fi";
 import "./Services.css";
+import "../About/About.css";
 
 function Services() {
   const services = [
@@ -45,16 +46,22 @@ function Services() {
   return (
     <div className="services-wrapper">
       
-      {/* About Hero Section */}
-      <section className="about-hero">
-        <div className="container-fluid h-100">
-          <div className="row justify-content-center align-items-center h-100">
-            <div className="col-12 text-center">
-              <h5 className="page-title fw-bold">Services</h5>
-            </div>
-          </div>
-        </div>
-      </section>
+              {/* ===== HERO SECTION (UPDATED) ===== */}
+     <section className="resume-hero">
+  <div className="container text-center hero-content">
+    <h1 className="hero-title">SERVICES</h1>
+  </div>
+
+  {/* 🔥 SVG WAVE */}
+  <div className="wave">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path 
+        d="M0,80 C300,140 1100,0 1440,80 L1440,200 L0,200 Z" 
+        fill="#f5f5f5"
+      ></path>
+    </svg>
+  </div>
+</section>
 
       {/* SERVICES GRID */}
       <section className="services py-5">

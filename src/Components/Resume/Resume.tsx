@@ -1,163 +1,135 @@
-import { IoMdTrophy } from "react-icons/io";
+import React from "react";
+import "./Resume.css";
 import { GiGraduateCap } from "react-icons/gi";
 import { GoPeople } from "react-icons/go";
+import { IoMdTrophy } from "react-icons/io";
 
 function Resume() {
   return (
     <div>
-      
-       {/* About Hero Section */}
-      <section className="about-hero">
-        <div className="container-fluid h-100">
-          <div className="row justify-content-center align-items-center h-100">
-            <div className="col-12 text-center">
-              <h5 className="page-title fw-bold">Resume</h5>
-            </div>
-          </div>
-        </div>
-      </section>
 
+      {/* ===== HERO SECTION (UPDATED) ===== */}
+     <section className="resume-hero">
+  <div className="container text-center hero-content">
+    <h1 className="hero-title">RESUME</h1>
+  </div>
 
+  {/* 🔥 SVG WAVE */}
+  <div className="wave">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path 
+        d="M0,80 C300,140 1100,0 1440,80 L1440,200 L0,200 Z" 
+        fill="#f5f5f5"
+      ></path>
+    </svg>
+  </div>
+</section>
 
+      {/* ===== TIMELINE ===== */}
       <section className="education-section py-5">
-        <div className="container text-center">
-      
-          <span className="badge bg-light text-success mb-2">LIFE TIME</span>
-          <h2 className="fw-bold mb-3">Education & Experience</h2>
-          <p className="text-muted mb-5">
-            We craft digital, graphic and dimensional thinking, to create category<br/>
-            leading brand experiences that have meaning.
-          </p>
-      
+        <div className="container">
+
           {/* ITEM 1 */}
           <div className="timeline-item red">
             <div className="row align-items-center">
-      
+
               <div className="col-md-2 text-center">
                 <div className="icon-box">
-                  <i className="bi bi-trophy"><IoMdTrophy/></i>
+                  <IoMdTrophy />
                 </div>
               </div>
-      
-              <div className="col-md-7 text-start">
-                <p className="fw-bold">GHI Themes - Web & App IT Company</p>
-                <p className="text-muted mb-0">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada tellus lorem.
+
+              <div className="col-md-7 text-center">
+                <h5 className="fw-bold mb-2">GHI Themes - Web & App IT Company</h5>
+                <p className="text-muted small mb-0">
+                  Princeton University is an educational institution.
                 </p>
               </div>
-      
+
               <div className="col-md-3 text-center">
-                <div className="year-circle">2019-22</div>
+                <div className="year-circle peel red">2019-22</div>
               </div>
-      
+
             </div>
           </div>
-      
+
           {/* ITEM 2 */}
           <div className="timeline-item yellow">
             <div className="row align-items-center">
-      
+
               <div className="col-md-3 text-center">
-                <div className="year-circle">2014-18</div>
+                <div className="year-circle peel yellow">2014-18</div>
               </div>
-      
-              <div className="col-md-7 text-start">
-                <p className="fw-bold">ABC Themes - Web Design IT Company</p>
-                <p className="text-muted mb-0">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada tellus lorem.
+
+              <div className="col-md-7 text-center">
+                <h5 className="fw-bold mb-2">ABC Themes - Web Design IT Company</h5>
+                <p className="text-muted small mb-0">
+                  Princeton University is an educational institution.
                 </p>
               </div>
-      
+
               <div className="col-md-2 text-center">
                 <div className="icon-box">
-                  <i className="bi bi-people"><GoPeople/></i>
+                  <GoPeople />
                 </div>
               </div>
-      
+
             </div>
           </div>
-      
+
           {/* ITEM 3 */}
           <div className="timeline-item green">
             <div className="row align-items-center">
-      
+
               <div className="col-md-2 text-center">
                 <div className="icon-box">
-                  <i className="bi bi-mortarboard"><GiGraduateCap/></i>
+                  <GiGraduateCap />
                 </div>
               </div>
-      
-              <div className="col-md-7 text-start">
-                <p className="fw-bold">MSc IT Master Degree</p>
-                <p className="text-muted mb-0">
-                  Harvard University is an educational institution that offers graduate, professional programs.
+
+              <div className="col-md-7 text-center">
+                <h5 className="fw-bold mb-2">MSc IT Master Degree</h5>
+                <p className="text-muted small mb-0">
+                  Princeton University is an educational institution.
                 </p>
               </div>
-      
+
               <div className="col-md-3 text-center">
-                <div className="year-circle">2012-13</div>
+                <div className="year-circle peel green">2012-13</div>
               </div>
-      
-      
-      
-      
-      
+
             </div>
-            
           </div>
-      
-      
-      
-          {/* ITEM 2 */}
-          <div className="timeline-item yellow">
+
+          {/* ITEM 4 */}
+          <div className="timeline-item blue">
             <div className="row align-items-center">
-      
+
               <div className="col-md-3 text-center">
-                <div className="year-circle">2007-08</div>
+                <div className="year-circle peel blue">2007-08</div>
               </div>
-      
-              <div className="col-md-7 text-start">
-                <p className="fw-bold">High / Higher Secondry School</p>
-                <p className="text-muted mb-0">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada tellus lorem.
+
+              <div className="col-md-7 text-center">
+                <h5 className="fw-bold mb-2">High / Higher Secondary School</h5>
+                <p className="text-muted small mb-0">
+                  Princeton University is an educational institution.
                 </p>
               </div>
-      
+
               <div className="col-md-2 text-center">
                 <div className="icon-box">
-                  <i className="bi bi-people"><GoPeople/></i>
+                  <GoPeople />
                 </div>
               </div>
-      
+
             </div>
           </div>
-      
-        </div>
-      </section>
 
-
-
-
-{/* ========== FREELANCER CTA SECTION ========== */}
-      <section className="freelancer-cta py-5">
-        <div className="container-sm">
-          <div className="row align-items-center">
-            <div className="col-lg-6">
-              <h2 className="cta-title">I Am Available For Freelancer.</h2>
-              <p className="cta-description">Browse hundreds of job offers and find the bestsuitable position.</p>
-            </div>
-            <div className="col-lg-6">
-              <div className="cta-form">
-                <input type="email" placeholder="Email Address" className="cta-input" />
-                <button className="btn btn-cta">Send Message</button>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
     </div>
-  )
+  );
 }
 
-export default Resume
+export default Resume;

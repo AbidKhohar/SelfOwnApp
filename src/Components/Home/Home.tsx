@@ -152,9 +152,9 @@ const services = [
             <div className="hero-content">
               <p className="hero-subtitle">Hi, I'm David Williamson</p>
 
-              <p className="hero-title">
+              <h1 className="hero-title2">
                 I'm a freelance <span className="highlight animate-profession">{professions[currentProfession]}</span> Developer
-              </p>
+              </h1>
 
               {/* <p className="hero-description">
                 I design and develop modern web & mobile applications with clean UI and powerful backend systems.

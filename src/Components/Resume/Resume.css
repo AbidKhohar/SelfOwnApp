@@ -1,0 +1,138 @@
+/* ================= HERO SECTION ================= */
+.resume-hero {
+  position: relative;
+  height: 320px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* TEXT */
+.hero-title {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+/* 🔥 WAVE */
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  line-height: 0;
+}
+
+.wave svg {
+  display: block;
+  width: 100%;
+  height: 120px;
+}
+/* ================= TIMELINE ================= */
+.education-section {
+  background: #fff;
+}
+
+/* BOX */
+.timeline-item {
+  border: 2px dashed;
+  padding: 20px 30px;
+  margin: 0 auto 30px auto;
+  max-width: 900px;
+  border-radius: 18px;
+}
+
+/* COLORS */
+.timeline-item.red { border-color: #f5a5a5; }
+.timeline-item.yellow { border-color: #f5d48a; }
+.timeline-item.green { border-color: #8fd19e; }
+.timeline-item.blue { border-color: #8fb3f4; }
+
+/* ICON */
+.icon-box {
+  width: 85px;
+  height: 85px;
+  border-radius: 20px;
+  background: #f1f3f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin: auto;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
+
+/* YEAR CIRCLE */
+.year-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 22px;
+  position: relative;
+  transform: rotate(-4deg);
+}
+
+/* COLORS */
+.year-circle.red {
+  background: linear-gradient(135deg, #ff6b6b, #ff4d4d);
+}
+.year-circle.yellow {
+  background: linear-gradient(135deg, #f6d365, #fda085);
+}
+.year-circle.green {
+  background: linear-gradient(135deg, #9be7b3, #6ccf8d);
+}
+.year-circle.blue {
+  background: linear-gradient(135deg, #7aa7ff, #4d7df3);
+}
+
+/* OUTER RING */
+.year-circle::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.04);
+  z-index: -1;
+}
+
+/* PEEL EFFECT */
+.year-circle.peel::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(145deg, #fff, #dcdcdc);
+  border-top-left-radius: 100%;
+  box-shadow: -4px -4px 10px rgba(0,0,0,0.15);
+}
+
+/* ALTERNATE */
+.timeline-item:nth-child(even) .year-circle {
+  transform: rotate(5deg);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .timeline-item {
+    padding: 15px;
+  }
+
+  .year-circle {
+    width: 100px;
+    height: 100px;
+    font-size: 16px;
+  }
+}

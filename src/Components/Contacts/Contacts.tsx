@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "../About/About.css";
 import {  FaPhone, FaEnvelope  } from "react-icons/fa";
 
 
@@ -10,25 +10,22 @@ function Contacts() {
 
     <div>
 
-      {/* About Hero Section */}
+     {/* ===== HERO SECTION (UPDATED) ===== */}
+     <section className="resume-hero">
+  <div className="container text-center hero-content">
+    <h1 className="hero-title">CONTACTS</h1>
+  </div>
 
-      <section className="about-hero">
-
-        <div className="container-fluid h-100">
-
-          <div className="row justify-content-center align-items-center h-100">
-
-            <div className="col-12 text-center">
-
-              <h5 className="page-title fw-bold">Contact Me</h5>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
+  {/* 🔥 SVG WAVE */}
+  <div className="wave">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path 
+        d="M0,80 C300,140 1100,0 1440,80 L1440,200 L0,200 Z" 
+        fill="#f5f5f5"
+      ></path>
+    </svg>
+  </div>
+</section>
 
 
 

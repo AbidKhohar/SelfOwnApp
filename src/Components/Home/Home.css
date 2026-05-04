@@ -357,21 +357,26 @@ body {
 }
 
 
-
+/* 🔥 IMAGE FIX (IMPORTANT) */
 .hero-image img {
-
-  width: 450px;
-
+  width: 480px;
   max-width: 100%;
-
   height: auto;
 
-  border-radius: 20px;
+  /* ❌ REMOVE BOX LOOK */
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
 
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  /* 🔥 FIXED FEEL */
+  position: sticky;
+  top: 120px;
+}
 
-  animation: float 3s ease-in-out infinite;
-
+/* RIGHT CONTENT */
+.hero-content {
+  flex: 1;
 }
 
 
@@ -402,12 +407,12 @@ body {
 
 
 
-  .hero-title {
+  
+.hero-title2{
 
-    font-size: 40px;
-
-  }
-
+  font-weight: bold;
+  size: 3rem;
+}
 
 
   .hero-image img {
@@ -1251,6 +1256,8 @@ body {
     flex-direction: column;
 
     align-items: flex-start;
+    padding: 15px;
+    margin: 18px;
 
   }
 
