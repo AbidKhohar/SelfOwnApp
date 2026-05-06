@@ -202,9 +202,9 @@ function Navbar        () {
 
           {/* Hire Me Button */}
 
-          <div className="ms-lg-3">
+          <div className="ms-lg-3 btn-hire">
 
-            <Link to="/contact" className="btn btn-hire">
+            <Link to="/contact" className="btn HireBtn">
 
               Hire Me! {'>>'}
 

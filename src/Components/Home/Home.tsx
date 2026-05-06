@@ -161,7 +161,7 @@ const services = [
               </p> */}
 
               <div className="hero-buttons">
-                <a  className="btn btn-hire">Download CV</a>
+                <a  className="btn btn-primar">Download CV</a>
               </div>
             </div>
 
@@ -175,26 +175,27 @@ const services = [
           <div className="row align-items-center">
       
       {/* LEFT SIDE */}
-      <div className="col-lg-6">
+      <div className="col-lg-7">
         <mark>Personal Details</mark>
         <p className="section-subtitle">
-          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+          It is a long established fact that a reader will be  distracted <br />  by the readable
+           content  of a page when looking at its layout.
         </p>
 
         {/* Social Icons */}
         <div className="social-links mt-4">
-          <a href="#" className="social-link"><FaGithub />
+          <a href="#" className="social-link1"><FaGithub />
 </a>
-          <a href="#" className="social-link"> <FaTwitter />
+          <a href="#" className="social-link2"> <FaTwitter />
 </a>
-          <a href="#" className="social-link"><LiaGoogle />
+          <a href="#" className="social-link3"><LiaGoogle />
 </a>
-          <a href="#" className="social-link"><RiLinkedinFill/></a>
+          <a href="#" className="social-link4"><RiLinkedinFill/></a>
         </div>
       </div>
 
       {/* RIGHT SIDE */}
-      <div className="col-lg-6">
+      <div className="col-lg-5">
         <div className="details-box">
           
           <div className="detail-row">
@@ -214,7 +215,7 @@ const services = [
 
           <div className="detail-row">
             <span className="label">Interest:</span>
-            <span className="value">Music, Reading, Journey</span>
+            <p className="value">Music, Reading, Journey</p>
           </div>
 
         </div>
@@ -541,7 +542,7 @@ const services = [
 
           <div className="text-center mb-5">
             <span className="badge badge-services mb-3">BLOGS</span>
-            <h2 className="section-title">Latest news & insights</h2>
+            <h5 className="">Latest news & insights</h5>
             <p className="section-subtitle">
               We craft digital, graphic and dimensional thinking, to create category
               leading brand experiences that have meaning.
@@ -551,7 +552,7 @@ const services = [
           <div className="row g-4">
 
             {/* ===== BLOG CARD (REUSABLE) ===== */}
-            {[1,2,3].map((item, index) => (
+            {[1,3,2].map((item, index) => (
               <div className="col-md-6 col-lg-4" key={index}>
                 <div className="blog-card">
 
@@ -563,11 +564,11 @@ const services = [
                     />
                   </div>
 
-                  <h5 className="blog-title">
+                  <p className="blog-title">
                     {index % 2 === 0
-                      ? "How to design engaging social media content"
+                      ? "Change the world with small things"
                       : "The future of web design and development"}
-                  </h5>
+                  </p>
 
                   {/* AUTHOR SECTION */}
                   <div className="blog-meta d-flex justify-content-between align-items-center">

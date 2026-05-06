@@ -51,14 +51,11 @@
 
 /* Hover */
 .navbar-nav .nav-link:hover {
-  color: #06b6d4 !important;
-  background: #f0fdfa;
 }
 
 /* Active state */
 .navbar-nav .nav-link.active {
   color: #06b6d4 !important;
-  background: #f0fdfa;
 }
 
 /* REMOVE UNDERLINE COMPLETELY */
@@ -70,13 +67,16 @@
 
 /* Hire Me Button */
 .btn-hire {
-  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%) !important;
+  background: white;
   border: none !important;
-  color: white !important;
+  color:black;
   font-size: 0.9rem;
   display: inline-block;
 }
 
+.HireBtn{
+  color: #06b6d4;
+}
 .btn-hire:hover {
   color: white !important;
 }
